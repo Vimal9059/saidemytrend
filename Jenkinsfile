@@ -11,12 +11,12 @@ pipeline {
       }
       stage ("SonarQube Analysis") {
         environment {
-          scannerHome=tool'saidemy-sonar-scanner'
+          scannerHome = tool 'saidemy-sonar-scanner'
         }
         steps {
           with SonarQubeEnv('saidemy-sonarqube-server') {
-          sh "${scannerHome}/bin/sonar-scanner"
-          }
+            sh "${scannerHome}/bin/sonar-scanner"
+            }
          }
        }
      }
